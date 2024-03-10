@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Banking</title>
+    <style>
+        #one{
+            display: flex;
+        }
+       
+    </style>
+</head>
+<body>
+    <form>
+    <div>
+       <input type="radio" >SBI
+       <input type="radio" >HDFC Bank
+       <input type="radio" >ICICI Bank
+       <input type="radio" >
+       <select id="dropdown">
+        <option value="option1">Other Banks</option>
+        <option value="option2">Canara Bank</option>
+        <option value="option3">Bank Of Baroda</option>
+      </select>
+    </div>
+    <button id="cancel">Cancel</button>
+    </form>
+    <script>
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            radioButtons.forEach(rb => {
+              if (rb !== button) {
+                rb.checked = false;
+              }
+            });
+          });
+        });
+      </script>
+</body>
+</html>

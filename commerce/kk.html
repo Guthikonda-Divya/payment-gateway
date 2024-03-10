@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colored Word Placeholder Example</title>
+<style>
+  /* Style for input element */
+  input {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* Style for regular placeholder text */
+  ::placeholder {
+    /* Default color for placeholder text */
+    color: #999999; /* You can change this to whatever color you like */
+  }
+
+  /* Style for colored word in placeholder text */
+  .colored-word {
+    color: red; /* Change this to the color you want for the word */
+  }
+</style>
+</head>
+<body>
+
+<!-- Input element with colored word in placeholder text -->
+<input type="text" placeholder="Enter your text here" id="coloredInput">
+
+<script>
+  // JavaScript to replace a word in placeholder text with a span element for styling
+  var input = document.getElementById('coloredInput');
+  var placeholder = input.getAttribute('placeholder');
+  var coloredPlaceholder = placeholder.replace('your', '<span class="colored-word">your</span>');
+  input.setAttribute('placeholder', coloredPlaceholder);
+</script>
+
+</body>
+</html>

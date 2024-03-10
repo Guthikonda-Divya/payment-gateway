@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWallet</title>
+    <style>
+        
+        #one{
+            display: flex;
+        }
+       
+    </style>
+</head>
+<body>
+    <form>
+        <div id="one">
+           <input type="radio" >jio Money
+           <input type="radio" >Mobiwik
+           <input type="radio" >Airtel
+           <input type="radio" >
+           <select id="dropdown">
+            <option value="option1">Other eWallets</option>
+            <option value="option2">Google pay</option>
+            <option value="option3">Apple pay</option>
+          </select>
+          
+        </div>
+        <p>
+            We'll redirect you to your payment provider's website so you can complete the purchase
+          </p>
+        </form>
+        <script>
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                radioButtons.forEach(rb => {
+                  if (rb !== button) {
+                    rb.checked = false;
+                  }
+                });
+              });
+            });
+          </script>
+</body>
+</html>
